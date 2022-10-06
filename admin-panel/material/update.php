@@ -17,14 +17,23 @@ if (isset($_GET['update'])) {
 }
 if (isset($_POST['send'])) {
     $instractor = $_POST['instractor'];
-    $title = $_POST['title'];
+    $title =strip_tags( $_POST['title']);
+    $content =strip_tags( $_POST['content']);
+    $link =strip_tags( $_POST['link']);
     $group = $_POST['group'];
     $created_at = $_POST['date'];
     if (trim($instractor) == "") {
         $errors[] = "please enter instractor";
     }
+
     if (trim($title) == "") {
         $errors[] = "please enter title";
+    }
+    if (trim($content) == "") {
+        $errors[] = "please enter content";
+    }
+    if (trim($link) == "") {
+        $errors[] = "please enter link";
     }
     if (trim($group) == "") {
         $errors[] = "please enter group";
@@ -33,7 +42,7 @@ if (isset($_POST['send'])) {
         $errors[] = "please enter date";
     }
     if (empty($errors)) {
-        $i = "UPDATE `material` SET `instractor_id`='$instractor',`title`='$title',`group_id`='$group',`created_at`='$created_at' WHERE id=$id ";
+        $i = "UPDATE `material` SET `instractor_id`='$instractor',`title`='$title',`group_id`='$group',`created_at`='$created_at',`content`='$content',`link`='$link' WHERE id=$id ";
         $q_i = mysqli_query($con, $i);
         go("/material/list.php");
     }
@@ -70,6 +79,14 @@ if (isset($_POST['send'])) {
                     <div class="form-group">
                         <label for="exampleInputEmail1">title</label>
                         <input type="text" name="title" value="<?= $row['title'] ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">title</label>
+                        <input type="text" name="content" value="<?= $row['content'] ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">link</label>
+                        <input type="text" name="link" value="<?= $row['link'] ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">group</label>

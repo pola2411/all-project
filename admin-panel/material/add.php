@@ -11,14 +11,23 @@ $s_g = mysqli_query($con, $sg);
 $errors = [];
 if (isset($_POST['send'])) {
     $instractor = $_POST['instractor'];
-    $title = $_POST['title'];
+    $title =strip_tags($_POST['title']);
+    $content =strip_tags( $_POST['content']);
+    $link =strip_tags( $_POST['link']);
     $group = $_POST['group'];
     $created_at = $_POST['date'];
     if (trim($instractor) == "") {
         $errors[] = "please enter instractor";
     }
+
     if (trim($title) == "") {
         $errors[] = "please enter title";
+    }
+    if (trim($content) == "") {
+        $errors[] = "please enter content";
+    }
+    if (trim($link) == "") {
+        $errors[] = "please enter link";
     }
     if (trim($group) == "") {
         $errors[] = "please enter group";
@@ -27,7 +36,7 @@ if (isset($_POST['send'])) {
         $errors[] = "please enter date";
     }
     if (empty($errors)) {
-        $i = "INSERT INTO `material`(`id`, `instractor_id`, `title`, `group_id`, `created_at`) VALUES (null,$instractor,'$title',$group,'$created_at')";
+        $i = "INSERT INTO `material` VALUES (null,$instractor,'$title',$group,'$created_at','$content','$link')";
         $q_i = mysqli_query($con, $i);
         go("/material/list.php");
     }
@@ -61,6 +70,14 @@ if (isset($_POST['send'])) {
                     <div class="form-group">
                         <label for="exampleInputEmail1">title</label>
                         <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">content</label>
+                        <input type="text" name="content" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">link</label>
+                        <input type="text" name="link" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">group</label>

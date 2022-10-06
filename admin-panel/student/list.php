@@ -4,7 +4,7 @@ include('../shared/nav.php');
 include('../shared/aside.php');
 include('../general/connection.php');
 include('../general/function.php');
-$s_group = "SELECT groups.id,groups.days,groups.status FROM `groups` JOIN diploma_with_student on groups.diploma_id=diploma_with_student.diploma_id group BY groups.days";
+$s_group = "SELECT groups.id,groups.days,groups.status FROM `groups` JOIN diploma_with_student on groups.diploma_id=diploma_with_student.diploma_id group by groups.days  ";
 $q_s_group = mysqli_query($con, $s_group);
 
 
