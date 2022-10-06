@@ -4,6 +4,7 @@ include "./shared/header.php";
 include "./shared/Sidebar.php";
 include "./general/connection.php";
 include "./general/function.php";
+
 ?>
 <div class="home-profile" id="home">
     <div class="title-home">

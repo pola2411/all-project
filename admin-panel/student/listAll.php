@@ -7,7 +7,7 @@ include('../general/function.php');
 
 $select = "SELECT `student_all_accepted`.`id` id, `groups`.`days` groupId , `student`.`email` stdemail
         FROM `student_all_accepted` INNER JOIN `diploma_with_student`ON `student_all_accepted`.`student_id` =`diploma_with_student`.`student_id` INNER JOIN `student` on 
-        `student`.`id` = `diploma_with_student`.`student_id` INNER JOIN `groups` ON `groups`.`id` = `student_all_accepted`.`group_id` ORDER BY id ASC";
+        `student`.`id` = `diploma_with_student`.`student_id` INNER JOIN `groups` ON `groups`.`id` = `student_all_accepted`.`group_id` GROUP BY `diploma_with_student`.`student_id`  ORDER BY id ASC";
 $result = mysqli_query($con, $select);
 ?>
 <main id="main" class="main">

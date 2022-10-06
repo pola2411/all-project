@@ -1,6 +1,6 @@
 <?php
 include './connection.php';
-include './function.php';
+
 if(isset($_POST['login'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
@@ -17,7 +17,10 @@ if(isset($_POST['login'])){
                 "role"=> $row['role_id'],
                 "image"=> $row['image']
             ];
-            go('index.php');
+            echo "<script>
+            window.location.replace('/instant/admin-panel/index.php')
+            </script>
+            ";
         }else{
             // go('login.php');
             echo "error";
@@ -29,7 +32,7 @@ if(isset($_POST['login'])){
         $num = $result->num_rows;
         if($num>0){
             $row = mysqli_fetch_assoc($result);
-            session_start();
+          
             $_SESSION['instractor']=[
                 "id"=> $row['id'],
                 "email"=> $row['email'],
@@ -38,7 +41,11 @@ if(isset($_POST['login'])){
                 "address"=> $row['address'],
                 "image"=> $row['image']
             ];
-            go('index.php');
+            echo "<script>
+            window.location.replace('/instant/admin-panel/index.php')
+            </script>
+            ";
+           
         }else{
             go('login.php');
         }

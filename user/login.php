@@ -79,9 +79,9 @@ if (isset($_POST['login'])) {
             "image" => $row['image'],
         ];
         echo "<script>
-window.location.replace('/instant/user/')
-</script>
-";
+        window.location.replace('/instant/user/')
+          </script>
+            ";
     }
 }
 
@@ -153,7 +153,7 @@ window.location.replace('/instant/user/')
                     <select name="year_id" id="" class="input">
                         <option value=""> accedmy year</option>
                         <?php foreach ($q_s_a as $data) { ?>
-                        <option value="<?= $data['id'] ?>"><?= $data['title'] ?></option>
+                            <option value="<?= $data['id'] ?>"><?= $data['title'] ?></option>
                         <?php } ?>
                     </select>
                 </div>
