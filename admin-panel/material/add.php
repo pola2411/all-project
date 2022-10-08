@@ -83,7 +83,7 @@ if (isset($_POST['send'])) {
                         <label for="exampleInputEmail1">group</label>
                         <select class="form-control" name="group">
                             <?php foreach ($s_g as $data) { ?>
-                                <option value="<?= $data['id'] ?>"><?= $data['title'] ?></option>
+                                <option value="<?= $data['id'] ?>"><?= $data['title']?> (<?= $data['status'] ?>  <?= $data['days'] ?>) </option>
                             <?php } ?>
                         </select>
                     </div>

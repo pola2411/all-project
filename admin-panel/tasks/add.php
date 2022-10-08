@@ -4,7 +4,7 @@ include('../shared/nav.php');
 include('../shared/aside.php');
 include('../general/connection.php');
 include('../general/function.php');
-$s = "SELECT groups.id,track.title FROM `groups` JOIN diplomas on groups.diploma_id =diplomas.id JOIN track on diplomas.track_id=track.id";
+$s = "SELECT groups.id,track.title,groups.status,groups.days FROM `groups` JOIN diplomas on groups.diploma_id =diplomas.id JOIN track on diplomas.track_id=track.id";
 $s_q = mysqli_query($con, $s);
 $errors = [];
 if (isset($_POST['send'])) {
@@ -61,7 +61,7 @@ if (isset($_POST['send'])) {
                         <label for="exampleInputEmail1">Group </label>
                         <select class="form-control" name="group_id">
                             <?php foreach ($s_q as $data) { ?>
-                                <option value="<?= $data['id'] ?>"><?= $data['title'] ?></option>
+                                <option value="<?= $data['id'] ?>"><?= $data['title'] ?> (<?= $data['status'] ?>  <?= $data['days'] ?>)</option>
                             <?php } ?>
                         </select>
                     </div>
