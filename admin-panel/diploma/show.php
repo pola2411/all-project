@@ -36,7 +36,7 @@ if (isset($_GET['delete'])) {
 <main id="main" class="main">
     <h3>Diploma</h3>
     <hr>
-    <div class="container col-6">
+    <div class="container col-md-8">
         <div class="card">
             <img src="../images/<?= $image ?>" class="card-img-top container w-100">
             <div class="card-body">

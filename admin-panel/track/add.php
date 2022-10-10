@@ -27,7 +27,7 @@ if (isset($_GET['delete'])) {
 <main id="main" class="main">
 <h3>Track</h3>
   <hr>
-  <div class="container">
+  <div class="container col-md-8">
     <div class="card">
       <?php if (empty($errors)) {
       } else { ?>

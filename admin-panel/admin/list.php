@@ -21,7 +21,7 @@ if (isset($_GET['delete'])) {
 <main id="main" class="main">
     <h3>Admin</h3>
     <hr>
-    <div class="container">
+    <div class="container col-md-8">
         <table class="table">
             <thead>
                 <tr>

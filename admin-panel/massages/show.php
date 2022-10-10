@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
 <main id="main" class="main">
     <h3>Massage</h3>
     <hr>
-    <div class="container col-6">
+    <div class="container col-md-8">
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title text-center"><?= $row['email'] ?></h3>

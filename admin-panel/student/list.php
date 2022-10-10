@@ -44,8 +44,8 @@ if (isset($_GET['delid'])) {
 <main id="main" class="main">
     <h3>All Student</h3>
     <hr>
-    <div class="container">
-        <table class="table col-md-6">
+    <div class="container col-md-8">
+        <table class="table " style="margin-left:  -15px;">
             <thead>
                 <tr>
                     <th scope="col">Email</th>
@@ -113,6 +113,7 @@ if (isset($_GET['delid'])) {
             </tbody>
         </table>
     </div>
+    
 </main>
 <?php
 include('../shared/footer.php');

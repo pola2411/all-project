@@ -160,6 +160,19 @@
           </li>
         </ul>
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#task-rate-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>TSAKS RATE</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="task-rate-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+     
+          <li>
+            <a href="/instant/admin-panel/task_rate/list.php">
+              <i class="bi bi-circle"></i><span>List Tasks</span>
+            </a>
+          </li>
+        </ul>
+      </li>
       <li class="nav-heading">Pages</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">

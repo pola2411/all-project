@@ -20,7 +20,7 @@ if (isset($_GET['delete'])) {
 <main id="main" class="main">
     <h3>Tasks</h3>
     <hr>
-    <div class="container col-6">
+    <div class="container col-md-8">
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title text-center">Task : <?php echo "$row[tasks_title]" ?></h3>

@@ -11,7 +11,7 @@ $s_q = mysqli_query($con, $s);
 <main id="main" class="main">
     <h3>Instractor</h3>
     <hr>
-    <div class="container">
+    <div class="container col-md-8">
         <table class="table">
             <thead>
                 <tr>

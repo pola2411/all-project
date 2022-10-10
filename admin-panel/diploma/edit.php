@@ -58,7 +58,7 @@ if (isset($_GET['edit'])) {
 <main id="main" class="main">
     <h3>Diploma</h3>
     <hr>
-    <div class="container col-10">
+    <div class="container col-md-8">
         <div class="card">
             <div class="card-body">
                 <form method="POST" enctype="multipart/form-data">

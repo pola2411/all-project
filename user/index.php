@@ -4,6 +4,12 @@ include "./shared/header.php";
 include "./shared/Sidebar.php";
 include "./general/connection.php";
 include "./general/function.php";
+$id_student=$_SESSION['user']['id'];
+$s_diploma="SELECT * FROM `student_all_accepted` JOIN groups ON student_all_accepted.group_id=groups.id JOIN diplomas
+ON groups.diploma_id=diplomas.id JOIN track on diplomas.track_id=track.id WHERE student_all_accepted.student_id=$id_student";
+$q_s_diploma=mysqli_query($con,$s_diploma);
+$row_diploma=mysqli_fetch_assoc($q_s_diploma);
+$num_row=mysqli_num_rows($q_s_diploma);
 
 ?>
 <div class="home-profile" id="home">
@@ -11,16 +17,17 @@ include "./general/function.php";
         <i class="fa-solid fa-house"></i>
         <h2>Instant Courses</h2>
     </div>
+    <?php if($num_row!=0){ ?>
     <div class="hero-features">
         <div class="single-hero-feature-One">
             <i class="fa-solid fa-graduation-cap"></i>
-            <h5>+2000 Developer</h5>
+            <h5><?= $row_diploma['title'] ?></h5>
             <div class="round-1"></div>
             <div class="round-2"></div>
         </div>
         <div class="single-hero-feature-two">
             <i class="fa-solid fa-chalkboard"></i>
-            <h5>2 Months Training</h5>
+            <h5><?= $row_diploma['period'] ?></h5>
             <div class="round-1"></div>
             <div class="round-2"></div>
         </div>
@@ -32,11 +39,15 @@ include "./general/function.php";
         </div>
         <div class="single-hero-feature-four">
             <i class="fa-solid fa-earth-americas"></i>
-            <h5>Online , Offline</h5>
+            <h5><?= $row_diploma['status'] ?></h5>
             <div class="round-1"></div>
             <div class="round-2"></div>
         </div>
     </div>
+    <?php  } ?>
+
+      
+
     <div class="Services">
         <h2> Courses</h2>
         <div class="line"></div>

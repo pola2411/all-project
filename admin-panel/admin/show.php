@@ -15,7 +15,7 @@ if (isset($_GET['show'])) {
 <main id="main" class="main">
     <h3>Admin</h3>
     <hr>
-    <div class="container col-6">
+    <div class="container col-8">
         <div class="card">
             <div class="card-body">
                 <img src="./upload/<?= $row['adimage'] ?>" alt="" class="card-img-top container w-100">

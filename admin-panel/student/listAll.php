@@ -13,8 +13,8 @@ $result = mysqli_query($con, $select);
 <main id="main" class="main">
     <h3>All Accepted Student</h3>
     <hr>
-    <div class="container">
-        <table class="table">
+    <div class="container col-md-8">
+        <table class="table ">
             <thead>
                 <tr>
                     <th scope="col">Id</th>

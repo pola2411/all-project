@@ -29,7 +29,7 @@ if (isset($_POST['send'])) {
 <main id="main" class="main">
     <h3>Role</h3>
     <hr>
-    <div class="container col-10">
+    <div class="container col-md-8">
         <div class="card">
             <?php if (empty($errors)) {
             } else { ?>
@@ -52,7 +52,7 @@ if (isset($_POST['send'])) {
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container col-md-8">
         <table class="table">
             <thead>
                 <tr>

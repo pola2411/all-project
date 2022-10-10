@@ -23,7 +23,7 @@ $q_i=mysqli_query($con,$i);
 
 ?>
 
-<div class="home-profile">
+<div class="home-profile ">
     <div class="title-home">
         <i class="fa-solid fa-user-graduate"></i>
         <h2>Material Courses</h2>
@@ -35,7 +35,7 @@ $q_i=mysqli_query($con,$i);
     </div>
     <!-- =========================== material ===================== -->
     <?php foreach ($q_s as $data) { ?>
-        <div class="material">
+        <div class="material ">
             <div class="post">
                 <div class="post-title">
                     <i class="fa-sharp fa-solid fa-file-invoice"></i>
@@ -90,11 +90,14 @@ $q_i=mysqli_query($con,$i);
                         </div>
                     </div>
                 </div>
-                    <?php }?>
+                    <?php }
+                    $img=$_SESSION['user']['image'];
+                    
+                    ?>
 
                 
                 <div class="add-comment">
-                    <img src="/instant/user/image/p2.jpg" alt="">
+                    <img src="/instant/user/upload/<?= $img ?>" alt="">
                     <form method="POST">
                         <input type="text" name="content" placeholder="add comment ">
                         <button name="send" value="<?= $data['id'] ?>"><i class="fa-solid fa-paper-plane"></i></button>

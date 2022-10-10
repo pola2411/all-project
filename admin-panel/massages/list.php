@@ -9,7 +9,7 @@ include('../general/function.php');
 <main id="main" class="main">
 <h3>Massage</h3>
   <hr>
-    <div class="container">
+    <div class="container col-md-8">
         <table class="table">
             <thead class="thead-dark">
                 <tr>

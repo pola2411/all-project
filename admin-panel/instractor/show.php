@@ -25,7 +25,7 @@ if (isset($_GET['delete'])) {
 <main id="main" class="main">
     <h3>Instractor</h3>
     <hr>
-    <div class="container col-6">
+    <div class="container col-md-8">
         <div class="card">
             <div class="card-body">
                 <img src="/instant/admin-panel/instractor/upload/<?php echo "$row[image]" ?>" alt="" class="card-img-top container w-100">

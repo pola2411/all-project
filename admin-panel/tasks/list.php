@@ -3,13 +3,13 @@ include('../shared/head.php');
 include('../shared/nav.php');
 include('../shared/aside.php');
 include('../general/connection.php');
-$s = "SELECT  tasks.id,tasks.title as task_name,track.title as tr_title,groups.status ,groups.id as group_id  FROM `tasks` JOIN groups on tasks.group_id=groups.id JOIN diplomas on groups.diploma_id=diplomas.id JOIN track on diplomas.track_id=track.id";
+$s = "SELECT  tasks.id,tasks.title as task_name,track.title as tr_title,groups.status ,groups.id as group_id  FROM `tasks` JOIN groups on tasks.group_id=groups.id JOIN diplomas on groups.diploma_id=diplomas.id JOIN track on diplomas.track_id=track.id order by groups.id ";
 $s_q = mysqli_query($con, $s);
 ?>
 <main id="main" class="main">
     <h3>Tasks</h3>
     <hr>
-    <div class="container">
+    <div class="container col-md-8">
         <table class="table">
             <thead>
                 <tr>
