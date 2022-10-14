@@ -4,8 +4,7 @@ include('../shared/nav.php');
 include('../shared/aside.php');
 include('../general/connection.php');
 include('../general/function.php');
-$s_group = "SELECT groups.id,groups.days,groups.status FROM `groups` JOIN diploma_with_student on groups.diploma_id=diploma_with_student.diploma_id group by groups.days  ";
-$q_s_group = mysqli_query($con, $s_group);
+
 
 
 
@@ -18,6 +17,8 @@ $result = mysqli_query($con, $select);
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $std = $_GET['std'];
+
+
     if(isset($_POST['sned'])){
         $id_group=$_POST['group_id'];
         
@@ -73,7 +74,12 @@ if (isset($_GET['delid'])) {
 
                                     <div class="dropdown-menu">
                                      
-
+                                            <?php 
+                                            $id_dip=$data['dipId'];
+                                            $s_group = "SELECT groups.id,groups.days,groups.status FROM `groups` JOIN diploma_with_student on groups.diploma_id=diploma_with_student.diploma_id  where groups.diploma_id= $id_dip ";
+                                            $q_s_group = mysqli_query($con, $s_group);
+                                            
+                                            ?>
                                             <a href="/instant/admin-panel/student/list.php?id=<?= $data['id'] ?>&std=<?= $data['std_id'] ?>" class='btn btn-success '><i class='bx bx-like'></i></a>
                                             <a href="/instant/admin-panel/student/list.php?delid=<?= $data['id'] ?>&delstd=<?= $data['std_id'] ?>" class='btn btn-danger '><i class='bx bx-dislike'></i></a>
                                             <form action="" method="POST">

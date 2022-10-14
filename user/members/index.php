@@ -4,6 +4,10 @@ include "../shared/header.php";
 include "../shared/Sidebar.php";
 include "../general/connection.php";
 include "../general/function.php";
+$id = $_SESSION['user']['id'];
+
+
+
 ?>
 <div class="home-profile">
     <div class="title-home">

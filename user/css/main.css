@@ -2,16 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300;500;600;700&display=swap');
 
-:root {
-    --orange: #ff7800;
-    --black: #130f40;
-    --light-color: #666;
-    --box-shadow: 0 10px 22px rgba(0, 0, 0, .1);
-    --border: .2rem solid rgba(0, 0, 0, .1);
-    --outline: .1rem solid rgba(0, 0, 0, .1);
-    --outline-hover: .2rem solid var(--black);
-  
-}
 * {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -22,16 +12,16 @@
 }
 ::-webkit-scrollbar {
     width: 12px;
-    background: #375850;
+    background: #adb9b6;
 }
 
 ::-webkit-scrollbar-thumb {
     width: 100%;
-    background: rgb(196, 158, 121);
+    background: #00CAB1;
     border-radius: 5px;
 }
 ::selection {
-    background: rgb(196, 158, 121);
+    background: #00CAB1;
     color: #fcfeff;
 }
 
@@ -41,9 +31,6 @@ html {
 body{
     background: #ECEEF7;
 }
-
-
-
 
 /* ========= navbar ============ */
 .navbar{
@@ -198,10 +185,6 @@ body{
 .active {
     display: none;
 }
-
-
-
-
 @keyframes animate {
     0%{
         transform: rotate(0deg);
@@ -279,9 +262,6 @@ body{
     padding: 70px;
     color: #fff;
 }
-.active3{
-    background-color: red;
-}
 .home-profile .title-home{
     display: flex;
     align-items: center;
@@ -310,7 +290,7 @@ body{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 220px;
+    height: auto;
     margin: 50px 0;
 }
 .home-profile .hero-features .single-hero-feature-One,
@@ -323,11 +303,12 @@ body{
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 23%;
-    height: 100%;
+    width: 100%;
+    height: 200px;
     font-size: 44px;
     text-align: center;
     padding: 20px;
+    margin: 20px 0;
     border-radius: 10px;
     background-color:rgba(0, 163, 255, .6);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
@@ -370,24 +351,19 @@ body{
 .Services{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     gap: 40px;
     margin: 100px 0;
     width: 100%;
 }
 .Services h2{
+    font-size: 28px;
     color: #777;
-    font-size: 32px;
-    font-weight: 600;
     padding-bottom: 0;
     margin-bottom: 0;
-
 }
 .card-services{
     display: flex;
-  
-   
 }
 
 .line{
@@ -398,13 +374,12 @@ body{
 
 .card-body{
     position: relative;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
-   margin:30px 10px;
-   height: 350px;
+    margin:30px 10px;
+    height: 350px;
     padding: 0;
     border-radius: 10px;
     transition: 2s;
@@ -439,7 +414,7 @@ body{
 .card-body button h6{
     position: absolute;
     top: 170px;
-    right: 75px;
+    right: 110px;
     color: #fff;
     font-size: 18px;
     font-weight:600;
@@ -461,11 +436,19 @@ body{
     margin-top: 10px;
     color: #777;
 }
-.modal-header .modal-title h5{ 
-    color: #999;
+.modal-title{ 
+    color: rgba(0, 153, 153);
 }
 .modal-body h6{ 
     color: #999;
+}
+.modal-footer{
+    display: flex;
+    gap: 20px;
+}
+.modal-footer .btn-model{
+    width: 150px;
+    background: linear-gradient(to right , rgba(0, 153, 153) , rgba(0, 255, 204));
 }
 /*=================== Material ===================== */
 .img-bg{
@@ -486,7 +469,7 @@ body{
 .material{
     width: 100%;
     height: auto;
-    padding: 40px ;
+    padding: 35px ;
     margin-top: 50px;
     background: #fff;
     border-radius: 10px;
@@ -494,6 +477,7 @@ body{
 }
 .post{
     width: 100%;
+    height: auto;
     border-bottom: 1px solid #777;
 }
 .post-title{
@@ -526,6 +510,10 @@ body{
     font-weight: 500;
     color: #777;
 }
+.post-content .link{
+    font-size: 16px;
+    font-weight: 500;
+}
 /* ============== comment ============= */
 .all-comment{
     width: 100%;
@@ -552,14 +540,6 @@ body{
     display: flex;
     gap: 20px;
 }
-.head-comment{
-    display: flex;
-    justify-content: space-between;
-}
-.head-comment i{
-    cursor: pointer;
-    color: #777;
-}
 .img-comment img{
     width: 55px;
     height: 55px;
@@ -578,13 +558,9 @@ body{
     font-weight:500;
     line-height: 1;
 }
-.text-comment{
-    padding: 10px 30px 10px 70px;
-}
-.text-comment p{
+/* .post-content p{
     font-size: 14px;
-    font-weight:500;
-}
+} */
 /* ===== add-comment ======== */
 .add-comment{
     display: flex;
@@ -622,12 +598,13 @@ body{
 }
 /*=================== tasks ===================== */
 .tasks{
-    display: flex;
+    display: grid;
+    grid-template-columns: 85% 15%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     height: auto;
-    padding: 30px ;
+    padding: 10px 30px ;
     margin-top: 40px;
     background: #fff;
     border-radius: 10px;
@@ -635,39 +612,60 @@ body{
 }
 .title-task{
     display: flex;
-    gap: 20px;
+    display: flex;
+    align-items:center;
+    gap: 15px;
+    width: 100%;
+    height: 70px;
     color: #00CAB1;
 }
 .title-task i{
-    font-size: 36px;
+    font-size: 32px;
 }
 .title-task h2{
-    font-size: 32px;
+    margin-top: 5px;
+    font-size: 30px;
+    color: #999;
+}
+.btn-showtask{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
 }
 .btn-showtask a{
     text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
     padding: 5px 20px;
     border-radius: 5px;
     color: #fff;
-    background:rgba(0, 163, 255, .6);
+    background: #00CAB1;
 }
 /*========== show tasks ========= */
 .show{
-    display: flex;
+    display: grid;
+    grid-template-columns: 68% 30%;
     justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin: 30px 0;
 }
 .task-show{
     display: flex;
-    width: 65%;
-    height: auto;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
     padding: 30px ;
-    margin-top: 40px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, .1) 
 }
-.task-show .title-task i{
-    margin-top: 5px;
+.title-task{
+    display: flex;
+    gap: 20px;
+    
 }
 .title-assi .time , .date{
     font-size: 14px;
@@ -692,10 +690,9 @@ body{
     align-items:center;
     justify-content: center;
     gap: 30px;
-    width: 33%;
-    height: auto;
-    padding: 30px ;
-    margin-top: 40px;
+    width: 100%;
+    height: 300px;
+    padding: 30px;
     background: #fff;
     border-radius: 10px;
     color: #777;
@@ -703,7 +700,9 @@ body{
 }
 .add-assi form input{
     width: 100%;
+    height: 40px;
     border-radius: 10px;
+    border: 2px solid #00CAB1;
     background: #eee;
 }
 .add-assi form button{
@@ -779,7 +778,7 @@ body{
 }
 .data h2{
     font-size: 20px;
-    font-weight: 500;;
+    font-weight: 500;
 }
 .data img{
     width: 45px;
@@ -797,13 +796,12 @@ body{
 }
 /*=================== content ===================== */
 .all-contact{
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 68% 30%;
     justify-content: space-between;
-
 }
 .content, .data-content{
-    width: 70%;
+    width: 100%;
     height: auto;
     padding: 30px ;
     margin-top: 40px;
@@ -813,16 +811,23 @@ body{
     box-shadow: 0 10px 20px rgba(0, 0, 0, .1)
 }
 .data-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 28%;
-    height: 500px;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    width: 100%;
+    height: 540px;
 }
 .content form{
     display: flex;
     flex-direction: column;
     gap:20px;
+}
+.content h5{
+    padding: 20px 5px;
+}
+.content form input::placeholder{
+    color: #999;
+    font-weight: 400;
 }
 .content form input , textarea{
     padding: 5px 10px;
@@ -833,7 +838,7 @@ body{
 .content form button{
     width: 25%;
     border: none;
-    padding: 10px;
+    padding: 7px 10px;
     font-size: 22px;
     border-radius: 5px;
     color: #fff;
@@ -863,9 +868,221 @@ body{
     .home-profile{
         width: 100%;
     }
+    .card-body button h6{
+        position: absolute;
+        top: 170px;
+        right: 80px;
+        padding: 8px 15px;
+    }
+    .tasks{
+        grid-template-columns: 80% 20%;
+    }
+    /*========== show tasks ========= */
+    .add-assi h2{
+        font-size: 20px;
+    }
+    .add-assi form input{
+        height: 37px;
+    }
+    .add-assi form button{
+        height: 40px;
+        font-size: 18px;
+        font-weight: 450;
+    }
 }
+@media  (max-width:770px){
+    .card-body button h6{
+        right: 95px;
+        font-size: 16px;
+        font-weight:600;
+    }
+    /*=================== tasks ===================== */
+    .tasks{
+        grid-template-columns: 100%;
+    }
+    .title-task i{
+        font-size: 28px;
+    }
+    .title-task h2{
+        font-size: 26px;
+    }
+    .btn-showtask a{
+        font-size: 16px;
+        padding: 5px 20px;
+    }
+    /*========== show tasks ========= */
+    .show{
+        grid-template-columns: 100%;
+        gap: 20px;
+    }
+    .add-assi h2{
+        font-size: 26px;
+    }
+    .my-task-link{
+        padding: 20px 20px;
+    }
+}
+@media  (max-width:500px){
+    .navbar ul .nav-left .searsh{
+        display:none;
+    }
+    .navbar ul .nav-right{
+        gap: 10px;
+    }
+    .navbar ul .nav-right .fa-regular{
+        display: none;
+    }
+    .home-profile{
+        width: 95%;
+        padding: 20px;
+    }
+    .home-profile .title-home h2{
+        font-size: 22px;
+    }
+    .home-profile .title-home i{
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    .Services h2{
+        font-size: 26px;
+    }
+    /* === material === */
+    .material{
+        padding: 15px ;
+    }
+    .post-title i{
+        font-size: 26px;
+    }
+    .post-title .title h2{
+        font-size: 26px;
+    }
+    .post-title .title .date , .time{
+        font-size: 12px;
+    }
+    .post-content {
+        padding: 5px 10px;
+    }
+    .post-content p{
+        font-size: 14px;
+    }
+    .post-content .link{
+        font-size: 13px;
+    }
+    /* comment */
+    .all-comment{
+        padding: 20px 10px;
+    }
+    .all-comment .count-comment i{
+        font-size: 15px;
+    }
+    .all-comment .count-comment p{
+        font-size: 15px;
+    }
+    .comment{
+        padding: 10px 0;
+    }
+    .img-comment img{
+        width: 35px;
+        height: 35px;
+    }
+    .img-comment .name h2{
+        margin-top: 0;
+        font-size: 16px;
+    }
+    .img-comment .name p{
+        font-size: 8px;
+    }
+    .post-content p{
+        font-size: 14px;
+    }
+    .add-comment{
+        gap: 13px;
+        padding: 10px;
+    }
+    .add-comment img{
+        width: 30px;
+        height: 30px;
+    }
+    .add-comment form{
+        width: 100%;
+        height: 40px;
+    }
+    .add-comment form input{
+        padding: 3px 30px 3px 3px;
+    }
+    .add-comment form i{
+        font-size: 16px;
+        right: 20px;
+        top: 13px;
+    }
+    .add-comment form input::placeholder{
+        color: #777;
+        font-size: 14px;
+    }
+    /*=================== tasks ===================== */
+    .tasks{
+        grid-template-columns: 100%;
+    }
+    .title-task i{
+        font-size: 20px;
+    }
+    .title-task h2{
+        font-size: 18px;
+    }
+    .btn-showtask a{
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+    .my-task-link{
+        padding: 10px 15px;
+    }
+    /*=================== members ===================== */
+    .members{
+        padding: 10px;
+    }
+    .members .title-instructor h2 , .title-student h2{
+        font-size: 20px;
+    }
+    .members .title-instructor i , .title-student i{
+        font-size: 20px; 
+    }
+    .data img{
+        width: 40px;
+        height: 40px;
+    }
+    .data h2{
+        font-size: 16px;
+    }
+}
+    
 
-
+@media  (max-width:380px){
+    /*========== show tasks ========= */
+    .add-assi h2{
+        font-size: 20px;
+    }
+    .add-assi form input{
+        height: 30px;
+    }
+    .add-assi form button{
+        height: 35px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .my-task .my-task-title i{
+        font-size: 26px;
+    }
+    .my-task .my-task-title h2{
+        font-size: 20px;
+    }
+    .my-task-link{
+        padding: 5px 10px;
+    }
+    .my-task-link a{
+        font-size: 16px;
+    }
+}
 
 
 
@@ -913,7 +1130,7 @@ body{
 .container-fluid {
     position: relative;
     width: 100%;
-    height: 150vh;
+    height: 100vh;
     background: #E0E4Ec;
     overflow: hidden;
 }
@@ -942,7 +1159,7 @@ body{
 
 .signin-signup {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 75%;
     transform: translate(-50%, -50%);
     width: 50%;
@@ -957,7 +1174,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 30px;
+    padding: 20px;
     overflow: hidden;
     grid-column: 1 /2;
     grid-row: 1 /2;
@@ -974,36 +1191,57 @@ body{
 }
 
 .signin-signup form h2 {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 600;
     color: rgb(87, 87, 87);
     margin-bottom: 20px;
 }
 
 .signin-signup form .input {
-    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
     height: 50px;
-    background: #c7cae7;
     margin: 13px 0;
     border-radius: 20px;
 }
 
-.signin-signup form input {
-    width: 83%;
+.signin-signup form input , select {
+    width: 49%;
     height: 100%;
     padding: 10px 10px 10px 18px;
-    background: transparent;
+    background: #c7cae7;
+    border-radius: 20px;
     border: none;
     outline: none;
     line-height: 1;
     font-size: 18px;
     font-weight: 600;
-    color: #444;
+    color: rgb(143, 142, 142);
 }
-
+.signin-signup form .input1 {
+    width: 65%;
+    height: 50px;
+    margin: 13px 0;
+    background: #c7cae7;
+    border-radius: 20px;
+}
+.signin-signup form .input1 input {
+    width: 85%;
+    height: 100%;
+    padding: 10px 10px 10px 18px;
+    background: #c7cae7;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(143, 142, 142);
+}
 .signin-signup form i {
     font-size: 26px;
-    line-height: 55px;
+    line-height: 45px;
     color: rgb(143, 142, 142);
     margin: 0 3px 0 15px;
 }
@@ -1132,14 +1370,6 @@ input::placeholder {
 .right-panel .image {
     transform: translateX(800px);
 }
-
-
-
-
-
-
-
-
 /* animation */
 
 .sign-up-mode:before {
@@ -1178,14 +1408,58 @@ input::placeholder {
     z-index: 2;
     opacity: 1;
 }
+@media (max-width: 1025px){
+    
+.signin-signup form h2 {
+    font-size: 32px;
+}
 
+.signin-signup form .input {
+    width: 95%;
+    height: 45px;
+    margin: 11px 0;
+}
 
+.signin-signup form input , select {
+    font-size: 16px;
+}
+.signin-signup form .input1 {
+    width: 85%;
+    height: 44px;
+    margin: 11px 0;
+}
+.signin-signup form .input1 input {
+    width: 80%;
+    height: 90%;
+    padding: 0px 0px 0px 10px;
+    font-size: 16px;
+}
+.signin-signup form i {
+    font-size: 20px;
+    line-height: 40px;
+}
 
+input::placeholder {
+    font-weight: 600;
+    font-size: 16px;
+}
+.btn {
+    width: 150px;
+    height: 40px;
+    margin: 22px 0;
+    font-weight: 500;
+}
+.social-text {
+    font-size: 18px;
+    font-weight: 550;
+}
+.panel p {
+    font-size: 14px;
+    font-weight: 550;
+    padding: 10px 0;
+}
 
-
-
-
-
+}
 @media (max-width: 870px) {
     .container-fluid {
         min-height: 800px;
@@ -1261,7 +1535,7 @@ input::placeholder {
 
     .right-panel .content-login,
     .right-panel .image {
-        transform: translateX(400px);
+        transform: translateX(800px);
     }
 
     .sign-up-mode:before {
@@ -1280,6 +1554,22 @@ input::placeholder {
         transform: translate(-50%, 0);
         left: 50%;
     }
+    /*=================== content ===================== */
+    .all-contact{
+        grid-template-columns: 100%;
+    }
+    .data-content{
+        display: grid;
+        grid-template-columns: 33% 34% 34%;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+    .single-data h6{
+        font-size: 14px;
+        font-weight: 500;
+    }
+
 }
 
 @media (max-width: 570px) {
@@ -1304,5 +1594,99 @@ input::placeholder {
         bottom: 28%;
         left: 50%;
     }
+}
+@media (max-width: 426px) {
+    .container-fluid {
+        height: 170vh;
+    }
+    .signin-signup {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .panel .content-login {
+        padding:0;
+    }
+
+    .container-fluid:before {
+        bottom: 78%;
+        left: 50%;
+    }
+
+    .sign-up-mode:before {
+        bottom: 25%;
+        left: 50%;
+    }
+    .signin-signup form .input {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    .signin-signup form input , select {
+        width: 100%;
+        height: 40px;
+        margin: 8px 0;
+    }
+    .signin-signup form .input1 {
+        height: 40px;
+        margin: 8px 0;
+    }
+    .signin-signup form .input1 input {
+        width: 85%;
+        height: 100%;
+        margin: 0;
+    }
+        /*=================== content ===================== */
+        .content{
+            padding: 10px ;
+        }
+        .content h5{
+            padding: 20px 5px;
+            font-size:16px;
+        }
+        .content form button{
+            width: 65%;
+            font-size: 20px;
+            margin: 20px 0;
+        } 
+        .data-content{
+            grid-template-columns: 100%;
+        }
+        .single-data h6{
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+}
+@media (max-width: 325px) {
+    .container-fluid:before {
+        bottom: 75%;
+        left: 50%;
+    }
+    .sign-up-mode:before {
+        bottom: 25%;
+        left: 50%;
+    }
+    .signin-signup form .input1 {
+        width: 80%;
+        height: 35px;
+    }
+    .signin-signup form .input1 input {
+        width: 80%;
+    }
+    .signin-signup form i {
+        font-size: 14px;
+    }
+    .social-text {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .social-icon .fab {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
 }
 /* =========================================================== end login =========================================================== */

@@ -58,7 +58,12 @@ if (isset($_POST['sign_up'])) {
         move_uploaded_file($tmp_name, $location);
         $i = "INSERT INTO `student`(`id`, `first_name`, `last_name`, `email`, `password`, `age`, `phone`, `address`, `image`, `years_id`, `gender`) VALUES (null,'$first_name','$last_name','$email','$new_password',$age,'$phone','$address','$image_name',$year_id,'$gender')";
         $q_i = mysqli_query($con, $i);
+        if($q_i){
         echo "<script> window.location.replace('/instant/user/') </script>";
+        }else{
+           
+
+        }
     }
 }
 
@@ -80,7 +85,7 @@ if (isset($_POST['login'])) {
         ];
         echo "<script>
         window.location.replace('/instant/user/')
-          </script>
+            </script>
             ";
     }
 }
@@ -94,18 +99,15 @@ if (isset($_POST['login'])) {
 
                 <h2> Sign in </h2>
 
-                <div class="input">
-                    <i class="fa-solid fa-user"></i>
-                    <input type="email" name="email" placeholder="Email">
+                <div class="input1">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="email" name="email" placeholder="Email">
                 </div>
-
-                <div class="input">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" placeholder="password">
+                <div class="input1">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" placeholder="password">
                 </div>
-
                 <button class="btn btn-info" name="login"> Login </button>
-
                 <p class="social-text"> Or sign in with social platforms</p>
                 <div class="social-madia">
                     <a href="#" class="social-icon">
@@ -125,47 +127,34 @@ if (isset($_POST['login'])) {
 
             </form>
 
-            <form class="sign-up-form" method="POST" enctype="multipart/form-data">
+            <form class="sign-up-form" method="POST" id="s" enctype="multipart/form-data">
                 <h2> Sign Up </h2>
-
                 <div class="input">
                     <input type="text" name="first_name" placeholder="First Name">
-                </div>
-                <div class="input">
                     <input type="text" name="last_name" placeholder="Last Name">
                 </div>
                 <div class="input">
                     <input type="email" name="email" placeholder="Email">
-                </div>
-                <div class="input">
                     <input type="password" name="password" placeholder="password">
                 </div>
                 <div class="input">
                     <input type="number" name="age" placeholder="Age">
-                </div>
-                <div class="input">
                     <input type="number" name="phone" placeholder="Phone">
                 </div>
                 <div class="input">
                     <input type="text" name="address" placeholder="Address">
+                    <input type="file" name="image">
                 </div>
                 <div class="input">
-                    <select name="year_id" id="" class="input">
+                    <select name="year_id" id="" >
                         <option value=""> accedmy year</option>
                         <?php foreach ($q_s_a as $data) { ?>
                             <option value="<?= $data['id'] ?>"><?= $data['title'] ?></option>
                         <?php } ?>
                     </select>
-                </div>
-
-                <div class="input">
-                    <input type="file" name="image">
-                </div>
-                <div class="input">
-                    <select name="gender" id="" class="input">
+                    <select name="gender" id="">
                         <option value="man">man</option>
                         <option value="female">female</option>
-
                     </select>
                 </div>
                 <button class="btn btn-info" name="sign_up"> SIGN UP </button>
@@ -188,7 +177,7 @@ if (isset($_POST['login'])) {
         <div class="panel right-panel">
             <div class="content-login">
                 <h3>One of us ? </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nihil, expedita cum dolor maiores
+                <p>aaaLorem ipsum dolor sit amet consectetur adipisicing elit. Eum nihil, expedita cum dolor maiores
                     voluptate facilis eaque suscipit </p>
                 <button class="btn transparent" id="sign-in-btn">Sign in</button>
             </div>

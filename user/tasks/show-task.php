@@ -60,10 +60,10 @@ $nu = mysqli_num_rows($q_s_t);
                 <div class="title-assi">
                     <h2><?= $row['task_name'] ?></h2>
                     <p><span class="time"><?= $row['created_at'] ?> </span> --- <span class="date"><?= $row['deadline'] ?> </span></p>
-                    <div class="task-content">
-                        <p><?= $row['content'] ?></p>
-                    </div>
                 </div>
+            </div>
+            <div class="task-content">
+                <p><?= $row['content'] ?></p>
             </div>
         </div>
         <div class="add-assi">

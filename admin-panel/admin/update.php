@@ -4,7 +4,6 @@ include('../shared/nav.php');
 include('../shared/aside.php');
 include('../general/connection.php');
 include('../general/function.php');
-
 $s = "SELECT * FROM `role`";
 $s_q = mysqli_query($con, $s);
 $errors = [];
@@ -19,10 +18,19 @@ if (isset($_POST['send'])) {
     $email = strip_tags($_POST['email']);
     $password = strip_tags($_POST['password']);
     $role_id = $_POST['role_id'];
-    $image_name = time() . $_FILES['image']['name'];
-    $tmp_name = $_FILES['image']['tmp_name'];
-    $type = $_FILES['image']['type'];
-    $size = $_FILES['image']['size'];
+    if (empty($_FILES['image']['name'])) {
+        $image_name = $row['image'];
+    } else {
+        unlink("./upload/$row[image]");
+        $image_name = time() . $_FILES['image']['name'];
+        $tmp_name = $_FILES['image']['tmp_name'];
+        $type = $_FILES['image']['type'];
+        $size = $_FILES['image']['size'];
+        if (($type == "image/jpeg") || ($type == "image/png") || ($type == "image/jpg")) {
+        } else {
+            $errors[] = "you must enter img type png jpg jpeg ";
+        }
+    }
     if (trim($name) == "") {
         $errors[] = "please enter name";
     }
@@ -31,13 +39,6 @@ if (isset($_POST['send'])) {
     }
     if (trim($password) == "") {
         $errors[] = "please enter password";
-    }
-    if (($size / 1024) / 1024 > 1) {
-        $errors[] = "you must enter img less than 1:M";
-    }
-    if (($type == "image/jpeg") || ($type == "image/png") || ($type == "image/jpg")) {
-    } else {
-        $errors[] = "you must enter img type png jpg jpeg ";
     }
     if (empty($errors)) {
         $location = "./upload/$image_name";

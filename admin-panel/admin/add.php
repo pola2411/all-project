@@ -13,6 +13,7 @@ if (isset($_POST['send'])) {
     $phone = strip_tags($_POST['phone']);
     $email = strip_tags($_POST['email']);
     $password = strip_tags($_POST['password']);
+    $new_password = sha1($password);
     $role_id = $_POST['role_id'];
     $image_name = time() . $_FILES['image']['name'];
     $tmp_name = $_FILES['image']['tmp_name'];
@@ -37,7 +38,7 @@ if (isset($_POST['send'])) {
     if (empty($errors)) {
         $location = "./upload/$image_name";
         move_uploaded_file($tmp_name, $location);
-        $i = "INSERT INTO `admin`(`id`, `name`, `email`, `password`, `image`, `role_id`) VALUES (null,'$name','$email','$password','$image_name',$role_id)";
+        $i = "INSERT INTO `admin`(`id`, `name`, `email`, `password`, `image`, `role_id`) VALUES (null,'$name','$email','$new_password','$image_name',$role_id)";
         $q_i = mysqli_query($con, $i);
         go("/admin/list.php");
     }
